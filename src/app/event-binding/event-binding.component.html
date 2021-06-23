@@ -1,0 +1,21 @@
+<p>event-binding works!</p>
+
+<p>{{message}}</p>
+<!-- <button type="button" (click)="message='Test'" class="btn btn-primary">Save</button> -->
+
+<button type="button" (click)="onButtonClicked()" class="btn btn-primary">Save</button>
+
+<div class="alert alert-primary" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" role="alert">
+    <strong>Enter Mouse over it</strong>
+</div>
+
+<div class="form-group">
+  <label for="">Enter Name</label>
+  <!-- <input type="text" (input)="onTextChanged($event)" class="form-control" aria-describedby="helpId" placeholder=""> -->
+  <!-- <input type="text" (keyup)="onKeyUp($event)" class="form-control" aria-describedby="helpId" placeholder=""> -->
+  <input type="text" (keydown)="onKeyUp($event)" class="form-control" aria-describedby="helpId" placeholder="">
+  <small id="helpId" class="form-text text-muted">Help text</small>
+</div>
+<div class="alert alert-info" role="alert">
+    <strong>{{message2}}</strong>
+</div>

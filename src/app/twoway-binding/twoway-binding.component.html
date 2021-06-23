@@ -1,0 +1,39 @@
+<h4>Limitation of One-way Binding</h4>
+<div class="row">
+    <div class="col-md-3">
+        <input type="text" class="form-control" (input)="OnewayChange($event)" >
+    </div>
+    <div class="col-md-3">
+        {{OnewayMessage}}
+    </div>
+    <div class="col-md-3">
+        <button type="button" (click)="OnewayTest()" class="btn btn-primary">One Way Test</button>
+    </div>
+</div>
+
+<h4>Advantages of Two-way Binding</h4>
+<div class="row">
+    <div class="col-md-3">
+        <input type="text" class="form-control" [(ngModel)]="TwowayMessage" >
+    </div>
+    <div class="col-md-3">
+        {{TwowayMessage}}
+    </div>
+    <div class="col-md-3">
+        <button type="button" (click)="TwowayTest()" class="btn btn-primary">Two Way Test</button>
+    </div>
+</div>
+
+
+<!-- <h4>Advantages of Two-way Binding</h4>
+<div class="row">
+    <div class="col-md-3">
+        <input type="text" class="form-control" [ngModel]="TwowayMessage" (ngModelChange)="TwowayChange($event)" >
+    </div>
+    <div class="col-md-3">
+        {{TwowayMessage}}
+    </div>
+    <div class="col-md-3">
+        <button type="button" (click)="TwowayTest()" class="btn btn-primary">Two Way Test</button>
+    </div>
+</div> -->
