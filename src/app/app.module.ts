@@ -7,6 +7,7 @@ import { PropertyBindingComponent } from './property-binding/property-binding.co
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwowayBindingComponent } from './twoway-binding/twoway-binding.component';
 import { FormsModule } from '@angular/forms';
+import { ProductsComponent } from './products/products.component';
 
 
 
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
         StringInterpolationComponent,
         PropertyBindingComponent,
         EventBindingComponent,
-        TwowayBindingComponent
+        TwowayBindingComponent,
+        ProductsComponent
     ], 
     imports:[
         BrowserModule,
