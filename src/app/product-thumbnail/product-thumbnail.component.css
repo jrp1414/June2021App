@@ -1,0 +1,15 @@
+
+.green{
+    background-color: greenyellow;
+    color: indigo;
+}
+
+.red{
+    background-color: magenta;
+    color: black;
+}
+
+.bold{
+    font-weight: bold;
+    font-style: italic;
+}

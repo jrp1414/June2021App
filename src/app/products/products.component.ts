@@ -10,7 +10,9 @@ import * as productsJson from "../data/products.json";
 export class ProductsComponent {
   public products: any[] = (productsJson as any).default;
 
-  constructor() {
-    
+  filterText:string="";
+
+  receivedFromChild(data:any){
+    console.log(`Received in parent :  ${data}`);
   }
 }

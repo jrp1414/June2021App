@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+        {{product.type}}
+    </div>
+    <!-- <div class="card-body" [ngStyle]="{'background-color':product.rating>3?'chartreuse':'crimson',color:product.rating>3?'blue':'white'}"> -->
+    <!-- <div class="card-body" [ngStyle]="getStyle(product)"> -->
+    <!-- <div class="card-body" [ngClass]="product.rating>3?'green bold':'red'"> -->
+    <!-- <div class="card-body" [ngClass]="getClass(product)"> -->
+    <div class="card-body">
+        <h4 class="card-title">{{product.title | uppercase}}</h4>
+        <p class="card-text"><img src={{product.imageurl}} style="max-width: 200px; max-height: 150px;" alt=""></p>
+        <p>Price : {{product.price | currency : 'INR'}}</p>
+        <p>{{pageDate | date :'dd-MM-yyyy'}}</p>
+        <p>
+            Rating : <p-rating [ngModel]="product.rating" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
+            <span [ngSwitch]="product.rating">
+                <span *ngSwitchCase="1">Very Bad</span>
+                <span *ngSwitchCase="2">Bad</span>
+                <span *ngSwitchCase="3">Average</span>
+                <span *ngSwitchCase="4">Good</span>
+                <span *ngSwitchCase="5">Very Good</span>
+                <span *ngSwitchDefault>NA</span>
+            </span>
+        </p>
+    </div>
+    <div class="card-footer text-muted">
+        {{product.description}}
+        <button type="button" class="btn btn-primary" (click)="sendToParent()">Send to Parent</button>
+    </div>
+</div>
+
