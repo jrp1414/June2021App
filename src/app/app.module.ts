@@ -12,6 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
 import { ProductThumbnailComponent } from './product-thumbnail/product-thumbnail.component';
 import { HeaderComponent } from './header/header.component';
+import { ShortenPipe } from './shared/pipe/shorten.pipe';
+import { FilterPipe } from './shared/pipe/filter.pipe';
+import { BasicHighlightDirective } from './shared/directives/basic-highlight.directive';
+import { BetterHighlightDirective } from './shared/directives/better-highlight.directive';
 
 
 
@@ -24,7 +28,11 @@ import { HeaderComponent } from './header/header.component';
         TwowayBindingComponent,
         ProductsComponent,
         ProductThumbnailComponent,
-        HeaderComponent
+        HeaderComponent,
+        ShortenPipe,
+        FilterPipe,
+        BasicHighlightDirective,
+        BetterHighlightDirective
     ], 
     imports:[
         BrowserModule,

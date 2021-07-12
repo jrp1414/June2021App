@@ -1,5 +1,9 @@
 <h4>Products List</h4>
 
+<div basic-highlight>Basic Highlight Directive</div>
+<!-- <div better-highlight dc='yellow' hc="chartreuse">Better Highlight Directive</div> -->
+<div [better-highlight]="'yellow'" hc="chartreuse">Better Highlight Directive</div>
+
 <div class="row" style="margin-bottom: 15px;">
     <div class="col-md-1">
         Filter :
@@ -7,18 +11,18 @@
     <div class="col-md-2">
         <input type="text" [(ngModel)]="filterText" class="form-control">
     </div>
-    <div class="col-md-2" *ngIf="filterText.length>0 else nofilter">
+    <!-- <div class="col-md-2" *ngIf="filterText.length>0 else nofilter">
         <div class="alert alert-info" role="alert">
             <strong>{{filterText}}</strong>
         </div>
-    </div>
-    <ng-template #nofilter>
+    </div> -->
+    <!-- <ng-template #nofilter>
         <div class="col-md-2">
             <div class="alert alert-danger" role="alert">
                 <strong>Enter Filter text</strong>
             </div>
         </div>
-    </ng-template>
+    </ng-template> -->
     <!-- <div class="col-md-2" *ngIf="filterText.length==0">
         <div class="alert alert-danger" role="alert">
             <strong>Enter Filter text</strong>
@@ -32,7 +36,7 @@
 </div>
 
 <div class="row">
-    <div *ngFor="let prod of products" class="col-md-3" style="margin-bottom: 10px;">
+    <div *ngFor="let prod of products | filter : filterText" class="col-md-3" style="margin-bottom: 10px;">
         <product-thumbnail [product]="prod" (pd)="receivedFromChild($event)"></product-thumbnail>
     </div>
 </div>
