@@ -23,6 +23,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class AppComponent {
   constructor(){
     //Test Line 1
+    //Test Line 2 in Test Branch
   }
 }
 
