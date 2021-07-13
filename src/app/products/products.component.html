@@ -11,6 +11,9 @@
     <div class="col-md-2">
         <input type="text" [(ngModel)]="filterText" class="form-control">
     </div>
+    <div class="col-md-2">
+       <button type="button" class="btn btn-primary" (click)="releaseData()">Release Data</button>
+    </div>
     <!-- <div class="col-md-2" *ngIf="filterText.length>0 else nofilter">
         <div class="alert alert-info" role="alert">
             <strong>{{filterText}}</strong>

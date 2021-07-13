@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Logger } from '../shared/services/logger.service';
+import { ProductService } from '../shared/services/product.service';
 
 
 @Component({
@@ -6,13 +8,23 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './product-thumbnail.component.html',
   styleUrls: ['./product-thumbnail.component.css']
 })
-export class ProductThumbnailComponent {
+export class ProductThumbnailComponent implements OnInit {
+
+  constructor(private logger: Logger,private ps:ProductService) {
+
+  }
+  ngOnInit(): void {
+    this.ps.notify.subscribe((data)=>{
+      console.log(`Received in Product Thumbnail : ${data}`);
+    });
+  }
 
   @Input() product: any;
   @Output() pd: EventEmitter<string> = new EventEmitter();
-  pageDate:Date = new Date();
+  pageDate: Date = new Date();
   sendToParent() {
     let name = prompt("Enter name") ?? '';
+    this.logger.log(`Before emitting ${name}`);
     this.pd.emit(name);
   }
 
@@ -31,11 +43,11 @@ export class ProductThumbnailComponent {
     };
   }
 
-  getClass(product:any) : string[] | string | any {
+  getClass(product: any): string[] | string | any {
     if (product.rating > 3) {
       // return "green bold";
       // return ["green","bold"];
-      return {green:true,bold:true};
+      return { green: true, bold: true };
     }
     return "red";
   }

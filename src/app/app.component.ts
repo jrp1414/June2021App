@@ -1,4 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Logger } from './shared/services/logger.service';
+import { ProductService } from './shared/services/product.service';
 
 @Component({
   // selector:"app-main", // Element Selector
@@ -17,7 +19,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
   // }`],
   styleUrls:[
     "./app.component.css"
-  ]
+  ],
+  // providers:[Logger]
+  providers:[ProductService]
   // encapsulation:ViewEncapsulation.None
 })
 export class AppComponent {

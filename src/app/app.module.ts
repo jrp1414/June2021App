@@ -16,6 +16,9 @@ import { ShortenPipe } from './shared/pipe/shorten.pipe';
 import { FilterPipe } from './shared/pipe/filter.pipe';
 import { BasicHighlightDirective } from './shared/directives/basic-highlight.directive';
 import { BetterHighlightDirective } from './shared/directives/better-highlight.directive';
+import { Logger } from './shared/services/logger.service';
+import { ProductService } from './shared/services/product.service';
+import { TempProductsComponent } from './temp-products/temp-products.component';
 
 
 
@@ -32,13 +35,17 @@ import { BetterHighlightDirective } from './shared/directives/better-highlight.d
         ShortenPipe,
         FilterPipe,
         BasicHighlightDirective,
-        BetterHighlightDirective
+        BetterHighlightDirective,
+        TempProductsComponent
     ], 
     imports:[
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
         RatingModule
+    ],
+    providers:[
+        Logger
     ],    
     bootstrap:[
         AppComponent
