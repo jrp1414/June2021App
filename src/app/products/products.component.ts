@@ -17,6 +17,7 @@ export class ProductsComponent {
 
   constructor(private logger:Logger,public ps:ProductService) {
     this.products = this.ps.getProducts();
+    this.ps.userName="Ram";
   }
   filterText:string="";
 

@@ -46,6 +46,7 @@ import { TempProductsComponent } from './temp-products/temp-products.component';
     ],
     providers:[
         Logger
+        // ProductService
     ],    
     bootstrap:[
         AppComponent

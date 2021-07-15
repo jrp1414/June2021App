@@ -17,6 +17,7 @@ export class TempProductsComponent implements OnInit {
     this.ps.notify.subscribe((data) => {
       console.log(`Received in Temp Products : ${data}`);
     });
+    console.log(this.ps.userName);
   }
 
 }

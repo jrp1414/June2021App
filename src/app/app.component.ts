@@ -21,7 +21,7 @@ import { ProductService } from './shared/services/product.service';
     "./app.component.css"
   ],
   // providers:[Logger]
-  providers:[ProductService]
+  // providers:[ProductService]
   // encapsulation:ViewEncapsulation.None
 })
 export class AppComponent {
