@@ -21,12 +21,15 @@ import { Logger } from './shared/services/logger.service';
 import { TempProductsComponent } from './temp-products/temp-products.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes:Routes = [
     {path:'home',component:HomeComponent},
-    {path:'products', component:ProductsComponent},
+    // {path:'productdetails/:id/:title',component:ProductDetailsComponent},
+    {path:'productdetails/:id',component:ProductDetailsComponent},
+    {path:'products', component:ProductsComponent},    
     {path:'',component:HomeComponent},
-    {path:'**',redirectTo:'home'},
+    // {path:'**',redirectTo:'home'},
 ];
 
 @NgModule({
@@ -44,7 +47,8 @@ const routes:Routes = [
         BetterHighlightDirective,
         TempProductsComponent,
         HeaderComponent,
-        HomeComponent
+        HomeComponent,
+        ProductDetailsComponent
     ], 
     imports:[
         BrowserModule,

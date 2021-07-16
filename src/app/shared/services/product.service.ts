@@ -15,7 +15,14 @@ export class ProductService {
     //Will write some code to fetch data from API later
   }
 
+  getProductDetails(_id:number) {
+    // return this.products.find(function (prod){return prod.id==_id;});
+    return this.products.find(prod=>prod.id==_id);
+  }
+
   notify:EventEmitter<string> = new EventEmitter();
 
   userName:string="";
 }
+
+
